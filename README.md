@@ -1,0 +1,1 @@
+##### 请将src目录里面的font文件夹复制到 npm i  之后生成的node_modules文件夹里的antd-mobile的dist文件夹下（字体图标）
