@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
 import { Tabs,Button} from 'antd-mobile';
-import Gxtj from '../components/Gexingtuijian';
+import Gxtj from './Gexingtuijian';
 import Garidlist from './Gardlist';
-import Djfs from '../components/Dujiafangsong';
-import Zxyy from '../components/ZuiXinYinYue';
+import Djfs from './Dujiafangsong';
+import Zxyy from './ZuiXinYinYue';
 import Tjmv from './TuijianMv';
 import Jxzl from './Jingxuanzhuanlan';
 import Zbdt from './DianTaituijian';

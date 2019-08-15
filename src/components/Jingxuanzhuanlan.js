@@ -11,8 +11,9 @@ export default class Jingxuanzhuanlan extends Component {
     componentDidMount(){
         get('/program/recommend').then(res=>{
             // console.log(res.data.programs.slice(0,3))
+            var aa=res.data.programs
             this.setState({
-                list:res.data.programs.slice(0,3)
+                list:aa.slice(0,3)
             })
         })
     }

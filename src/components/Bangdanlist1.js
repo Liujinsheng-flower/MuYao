@@ -13,10 +13,10 @@ export default class Bangdanlist1 extends Component {
        get('/top/list',{
            idx:this.props.idx
        }).then(res=>{
-        //    console.log(res.data.playlist);
+        var aa=res.data.playlist.tracks;
            this.setState({
                Img:res.data.playlist.coverImgUrl,
-               list:res.data.playlist.tracks.slice(0,3)
+               list:aa.slice(0,3)
            })
        })
     }

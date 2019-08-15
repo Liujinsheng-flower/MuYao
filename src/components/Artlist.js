@@ -12,10 +12,10 @@ export default class artlist extends Component {
     componentDidMount(){
         get('/toplist/artist').then(res=>{
             
-            // console.log(res.data.list.artists);
+            var aa=res.data.list.artists;
             this.setState({
                 Img:res.data.list.artists[0].img1v1Url,
-                list:res.data.list.artists.slice(0,3)
+                list:aa.slice(0,3)
             })
             
         })

@@ -10,9 +10,9 @@ export default class ZuiXinYinYue extends Component {
     }
     componentDidMount(){
         get('/personalized/newsong').then(res=>{
-            // console.log(res.data.result.slice(5));
+            var aa=res.data.result
             this.setState({
-                list:res.data.result.slice(5)
+                list:aa.slice(0,5)
             })
 
         })

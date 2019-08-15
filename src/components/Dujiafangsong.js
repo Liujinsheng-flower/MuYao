@@ -10,9 +10,9 @@ export default class Dujiafangsong extends Component {
     }
     componentDidMount(){
         get('/personalized/privatecontent').then(res=>{
-            // console.log(res.data.result[2]);
+            var aa=res.data.result;
             this.setState({
-                list:res.data.result.slice(0,2),
+                list:aa.slice(0,2),
                 lastItem:res.data.result[2]
             })
         })

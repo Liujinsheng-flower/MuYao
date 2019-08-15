@@ -9,11 +9,5 @@ export default{
             }
         ]
     ],
-    proxy: {
-        '/api': {
-          target: 'https://net-music.penkuoer.com',
-          pathRewrite: { '^/api': '' },
-          changeOrigin: true
-        }
-      }
+  
 }
