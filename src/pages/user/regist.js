@@ -9,7 +9,8 @@ export default class regist extends Component {
         this.state={
             phone:'',
             password:'',
-            ctcode:''
+            ctcode:'',
+            nickname:''
         }
     }
     UserNameHandle(){
@@ -26,14 +27,20 @@ export default class regist extends Component {
         }
     }
     ctCode(){
-        get('http://localhost:3000/cellphone/existence/check',{
-            phone:this.state.phone
-        }).then(res=>{
-            if(res.data.exist==-1){
-                Toast.info('可用') 
-            }else{
-               Toast.info('您已经注册过，请直接登录')
-                router.push('/user/login');
+       get('/captch/sent',{phone:this.state.phone}).then(res=>{
+           if(res.data.code==200){
+               Toast.info('成功发送')
+           }else{
+                Toast.info('发送失败，请输入正确的手机号码')
+           }
+           
+       })
+    }
+    yanzheng(){
+        get('/register/cellphone',{phone:this.state.phone,captcha:this.state.ctcode,password:this.state.password,nickname:this.state.nickname}).then(res=>{
+            if(res.data.code==200){
+                Toast.info("注册成功！3s后跳转页面");
+                setTimeout(()=>{router.push('user/login')},3000);
             }
         })
     }
@@ -75,19 +82,32 @@ export default class regist extends Component {
                              this.setState({
                                  password:e.target.value
                              })
+                             
                          }}
                         placeholder="设置登录密码，不少于6位"
                         ><span className='icon iconfont' style={{fontSize:'1.5rem'}}>&#xe604;</span></InputItem>
+                          <InputItem
+                         type="password"
+                         style={{fontSize:'1rem'}}
+                         onKeyUp={(e)=>{
+                             this.setState({
+                                nickname:e.target.value
+                             })
+                             
+                         }}
+                        placeholder="设置昵称"
+                        ><span className='icon iconfont' style={{fontSize:'1.5rem'}}>&#xe628;</span></InputItem>
                         <WhiteSpace/>
                         <Button type="ghost" onClick={()=>this.ctCode()} style={{width:'40%',height:'2rem',lineHeight:'2rem',fontSize:'1rem',marginLeft:'10%'}}>获取验证码</Button>
                         <WhiteSpace/>
                         <InputItem
                          type="text"
                          style={{fontSize:'1rem'}}
-                        placeholder="填写6位验证码"
+                         placeholder="填写4位验证码"
+                         onKeyUp={(e)=>this.setState({ctcode:e.target.value})}
                         >验证码</InputItem>
                     </List>
-                    <Button style={{color:'#fff',backgroundColor:'rgb(277,0,27)',margin:"0 auto",marginTop:'2rem',width:'80%',height:'2.3rem',lineHeight:'2.3rem'}}>下一步</Button>
+                    <Button onClick={()=>this.yanzheng()} style={{color:'#fff',backgroundColor:'rgb(277,0,27)',margin:"0 auto",marginTop:'2rem',width:'80%',height:'2.3rem',lineHeight:'2.3rem'}}>下一步</Button>
                 </div>
             </div>
         )
