@@ -8,8 +8,9 @@ export default class DianTaituijian extends Component {
         }
     }
     componentDidMount(){
+        
         get('/personalized/djprogram').then(res=>{
-            ;
+            
 
             this.setState({
                 list:res.data.result

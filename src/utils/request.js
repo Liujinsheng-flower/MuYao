@@ -1,6 +1,7 @@
 import axios from 'axios';
  const instance = axios.create({
-    baseURL:'https://net-music.penkuoer.com'
+     baseURL:'/api'
+    // baseURL:'https://net-music.penkuoer.com'
     // baseURL:'http://localhost:3000'
 })
 export  const  get=(url,params)=>instance.get(url,{params});
