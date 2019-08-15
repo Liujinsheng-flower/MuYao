@@ -22,7 +22,7 @@ export default class mine extends Component {
            get('/user/detail',{
                 uid:getToken()
             }).then(res=>{
-                console.log(res.data)
+                
                 this.setState({
                     Myinfos:res.data.profile,
                     lv:res.data.level

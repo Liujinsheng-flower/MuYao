@@ -16,7 +16,7 @@ export default class index extends Component {
     }
     componentDidMount(){
         get('/search/hot/detail').then(res=>{
-            console.log(res.data.result.hots)
+            // console.log(res.data.result.hots)
             this.setState({
                 Hotlist:res.data.result.hots
             })

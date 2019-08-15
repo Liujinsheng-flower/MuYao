@@ -9,7 +9,7 @@ export default class DianTaituijian extends Component {
     }
     componentDidMount(){
         get('/personalized/djprogram').then(res=>{
-            console.log(res.data.result);
+            ;
 
             this.setState({
                 list:res.data.result

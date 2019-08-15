@@ -13,7 +13,7 @@ export default class OneJingpin extends Component {
         get('/top/playlist/highquality',{
             limit:1
         }).then(res=>{
-            console.log(res.data.playlists);
+            // console.log(res.data.playlists);
             this.setState({
                 OneMusicinfo:res.data.playlists[0],
                 backgroundImage:res.data.playlists[0].creator.backgroundUrl

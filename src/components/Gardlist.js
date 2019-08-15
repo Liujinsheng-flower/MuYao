@@ -10,7 +10,7 @@ export default class Gardlist extends Component {
     }
     componentDidMount(){
         get('/personalized').then(res=>{
-            console.log(res.data.result.slice(0,6));
+          
             this.setState({
                 list:res.data.result.slice(0,6)
             })

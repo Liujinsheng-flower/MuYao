@@ -11,7 +11,7 @@ export default class artlist extends Component {
     }
     componentDidMount(){
         get('/toplist/artist').then(res=>{
-            console.log(res.data)
+            
             // console.log(res.data.list.artists);
             this.setState({
                 Img:res.data.list.artists[0].img1v1Url,

@@ -12,7 +12,7 @@ export default class Jingpinlist extends Component {
         get('/top/playlist/highquality',{
             limit:11
         }).then(res=>{
-            console.log(res.data.playlists.slice(1,11))
+            // console.log(res.data.playlists.slice(1,11))
             this.setState({
                 list:res.data.playlists.slice(1,11)
             })

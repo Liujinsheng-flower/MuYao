@@ -5,7 +5,7 @@ export default class index extends Component {
         super(props);
     }
     test(){
-        console.log(this.refs.child);
+        // console.log(this.refs.child);
         this.refs.child.aa();
     }
     render() {

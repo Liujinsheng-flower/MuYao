@@ -27,8 +27,8 @@ export default class mymusic extends Component {
                    arr.push(index);
                }
            })
-           console.log(res.data.playlist.slice(0,arr.length)); 
-           console.log(res.data.playlist.slice(arr.length))
+        //    console.log(res.data.playlist.slice(0,arr.length)); 
+        //    console.log(res.data.playlist.slice(arr.length))
            this.setState({
                CreateLlist:res.data.playlist.slice(0,arr.length),
                AddList:res.data.playlist.slice(arr.length)

@@ -9,7 +9,6 @@ export default class JingxuanMv extends Component {
     }
     componentDidMount(){
         get('/personalized/mv').then(res=>{
-            console.log(res.data.result);
             this.setState({
                 list:res.data.result
             })
